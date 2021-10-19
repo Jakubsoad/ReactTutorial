@@ -7,7 +7,11 @@ const user = (props: any) => {
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
 
-    return <h2>Hey {props.username}! Current hour is {hours}:{minutes}:{seconds}</h2>;
+    return <div>
+            <h2>Hey {props.username}! Current hour is {hours}:{minutes}:{seconds}</h2>
+            <p>State: {props.children}</p>
+        </div>
+        ;
 }
 
 export default user;

@@ -8,8 +8,8 @@ class App extends React.Component {
             <div className='App'>
                 <h1 className='red-color'>Hello world!</h1>
                 <p>Just a paragraph</p>
-                <User username='Mike' role='admin'/>
-                <User username='Paul' role='guest'/>
+                <User username='Mike' role='admin'>test</User>
+                <User username='Paul' role='guest'>test2</User>
             </div>
         );
     }
