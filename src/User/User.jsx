@@ -8,8 +8,9 @@ const user = (props: any) => {
     let seconds = date.getSeconds();
 
     return <div>
-            <h2>Hey {props.username}! Current hour is {hours}:{minutes}:{seconds}</h2>
+            <h2>Hey {props.username}!</h2>
             <p>State: {props.children}</p>
+            <p>Role: {props.role}</p>
         </div>
         ;
 }
