@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import User from './User/User';
+import Customer from './Customer/Customer'
 
 class App extends React.Component {
 
@@ -55,6 +56,7 @@ class App extends React.Component {
                     <button onClick={this.setUserDataHandler} className="form-button">Show User</button>
                 </div>
                 <User username={this.state.username} role={this.state.role}>{this.state.active ? this.active : this.disabled}</User>
+                <Customer></Customer>
             </div>
         );
     }
