@@ -31,13 +31,19 @@ class App extends React.Component {
         this.setState({showArticles: !doesShow});
     };
 
+    deleteArticle = (index) => {
+        const articles = this.state.articles;
+        articles.splice(index, 1);
+        this.setState({articles: articles});
+    };
+
     render() {
 
         let articles = null;
 
         if (this.state.showArticles) {
-            articles = this.state.articles.map(article => {
-                return(<Article title={article.title} content={article.content}/>);
+            articles = this.state.articles.map((article, index) => {
+                return(<Article title={article.title} content={article.content} deleteArticle={() => this.deleteArticle(index)}/>);
             });
         }
 
