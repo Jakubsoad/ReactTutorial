@@ -19,7 +19,7 @@ const Customer = () => {
 
     return (
         <div>
-            <h2>Customer:</h2>
+            <h2>Customer: </h2>
             <h3>{customerState.pickedName}</h3>
             <button onClick={switchName}>Change name</button>
         </div>
