@@ -1,0 +1,9 @@
+.Article {
+    width: 70%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 0 3px 4px darkslategray;
+    padding: 12px;
+    text-align: center;
+    margin: auto auto 10px;
+}

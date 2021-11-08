@@ -1,6 +1,9 @@
 import React from 'react';
-import './App.css';
+
 import Article from './Article/Article';
+
+import './App.css';
+import './Article/Article.css';
 
 class App extends React.Component {
 
@@ -31,7 +34,7 @@ class App extends React.Component {
     };
 
     toggleArticlesHandlers = () => {
-        const doesShow = [...this.state.showArticles];
+        const doesShow = this.state.showArticles;
         this.setState({showArticles: !doesShow});
     };
 
@@ -42,6 +45,17 @@ class App extends React.Component {
     };
 
     render() {
+
+        const buttonStyle = {
+            backgroundColor: 'white',
+            border: '2px solid #326647',
+            color: 'black',
+            padding: '10px 16px',
+            textAlign: 'center',
+            fontSize: '20px',
+            cursor: 'pointer',
+            margin: '10px 0'
+        };
 
         let articles = null;
 
@@ -60,7 +74,7 @@ class App extends React.Component {
 
         return (
             <div className='App'>
-                <button onClick={this.toggleArticlesHandlers}>Toggle articles</button>
+                <button style={buttonStyle} onClick={this.toggleArticlesHandlers}>Toggle articles</button>
                 { articles }
             </div>
         );
