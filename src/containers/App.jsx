@@ -35,6 +35,7 @@ class App extends React.Component {
     };
 
     toggleArticlesHandlers = () => {
+        console.log('test');
         const doesShow = this.state.showArticles;
         this.setState({showArticles: !doesShow});
     };

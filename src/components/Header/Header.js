@@ -20,10 +20,9 @@ const Header = props => {
     return(
         <div>
             <h1>Article app</h1>
-            <button style={buttonStyle} onClick={props.toggleArticlesHandlers}>Toggle articles</button>
+            <button style={buttonStyle} onClick={props.toggleArticles}>Toggle articles</button>
         </div>
     );
-
 }
 
 export default Header;
