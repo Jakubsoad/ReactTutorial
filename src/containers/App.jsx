@@ -1,9 +1,10 @@
-import React from 'react';
-
-import Article from './Article/Article';
+import React from "react";
+import Articles from "../components/Articles/Articles";
+import Header from "../components/Header/Header";
+import Article from "../components/Articles/Article/Article";
 
 import './App.css';
-import './Article/Article.css';
+import '../components/Articles/Article/Article.css';
 
 class App extends React.Component {
 
@@ -46,36 +47,15 @@ class App extends React.Component {
 
     render() {
 
-        const buttonStyle = {
-            backgroundColor: 'white',
-            border: '2px solid #326647',
-            color: 'black',
-            padding: '10px 16px',
-            textAlign: 'center',
-            fontSize: '20px',
-            cursor: 'pointer',
-            margin: '10px 0'
-        };
-
         let articles = null;
-
         if (this.state.showArticles) {
-            articles = this.state.articles.map((article, index) => {
-                return(
-                    <Article
-                        title={article.title}
-                        content={article.content}
-                        deleteArticle={() => this.deleteArticle(index)}
-                        key={article.id}
-                    />
-                );
-            });
+            articles = <Articles articles={this.state.articles} deleteArticle={this.deleteArticle}/>;
         }
 
         return (
             <div className='App'>
-                <button style={buttonStyle} onClick={this.toggleArticlesHandlers}>Toggle articles</button>
-                { articles }
+                <Header showArticles={this.state.showArticles} toggleArticles={this.toggleArticlesHandlers}/>
+                {articles}
             </div>
         );
     }
