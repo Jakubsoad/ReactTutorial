@@ -8,6 +8,24 @@ import '../components/Articles/Article/Article.css';
 
 class App extends React.Component {
 
+    constructor(props) {
+        //JTD
+        console.log('construct');
+        super(props);
+    }
+
+    static getDerivedStateFromProps(props, state) {
+        //JTD
+        console.log('get derived state from props');
+
+        return state;
+    }
+
+    componentDidMount() {
+        //JTD
+        console.log('component did mount');
+    }
+
     state = {
         articles: [
             {
@@ -47,6 +65,9 @@ class App extends React.Component {
     };
 
     render() {
+
+        //JTD
+        console.log('render');
 
         let articles = null;
         if (this.state.showArticles) {
