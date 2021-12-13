@@ -1,12 +1,16 @@
 import React from 'react';
-import './App.css';
-import Employees from '../components/Employees/Empoloyees'
 import axios from 'axios';
+
+import './App.css';
+
+import Employees from '../components/Employees/Empoloyees'
+import EmployeeDetails from "../components/Employees/Employee/EmployeeDetails/EmployeeDetails";
 
 class App extends React.Component {
 
     state = {
-        employees: []
+        employees: [],
+        selectedEmployee: null,
     }
 
     componentDidMount() {
@@ -16,11 +20,25 @@ class App extends React.Component {
         });
     }
 
+    showSelectedEmployeeHandler = (id) => {
+        axios.get(`https://dummy.restapiexample.com/api/v1/employee/${id}`, null).then(response => {
+            this.setState({selectedEmployee: response.data.data});
+        });
+    }
+
     render() {
+
+        let selectedEmployee = null;
+
+        if (this.state.selectedEmployee !== null) {
+            selectedEmployee = <EmployeeDetails name={this.state.selectedEmployee.employee_name} salary={this.state.selectedEmployee.employee_salary} age={this.state.selectedEmployee.employee_age}/>
+        }
+
         return (
             <div className='App'>
+                {selectedEmployee}
                 <h1>Employees</h1>
-                <Employees employees={this.state.employees} />
+                <Employees employees={this.state.employees} showSelectedEmployee={this.showSelectedEmployeeHandler}/>
             </div>
         );
     }

@@ -3,4 +3,11 @@
     border: 1px solid #dddddd;
     box-shadow: 0 3px 4px #bbbbbb;
     padding: 12px;
+    cursor: pointer;
+}
+
+.Employee:hover {
+    background-color: #e6f9fe;
+    border-color: #61dafb;
+    box-shadow: 5px 5px 10px 2px #e6f9fe;
 }

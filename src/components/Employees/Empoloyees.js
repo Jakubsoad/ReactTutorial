@@ -8,7 +8,7 @@ class Empoloyees extends Component {
 
         const employees = this.props.employees.map((employee, index) => {
             return (
-                <Employee name={employee.employee_name} age={employee.employee_age} key={employee.id}/>
+                <Employee name={employee.employee_name} age={employee.employee_age} key={employee.id} showSelectedEmployee={this.props.showSelectedEmployee} id={employee.id}/>
             );
         });
 
