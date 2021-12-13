@@ -7,15 +7,13 @@ class Empoloyees extends Component {
     render() {
 
         const employees = this.props.employees.map((employee, index) => {
-            //JTD
-            console.log(employee);
             return (
-                <Employee name={employee.employee_name} age={employee.employee_age} />
+                <Employee name={employee.employee_name} age={employee.employee_age} key={employee.id}/>
             );
         });
 
         return (
-            <div className={styles.Empoloyees}>
+            <div className={styles.Employees}>
                 {employees}
             </div>
         );

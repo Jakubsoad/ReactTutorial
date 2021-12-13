@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Employees from '../components/Employees/Empoloyees'
 import axios from 'axios';
-import employee from "../components/Employees/Employee/Employee";
 
 class App extends React.Component {
 
@@ -12,8 +11,8 @@ class App extends React.Component {
 
     componentDidMount() {
         axios.get('https://dummy.restapiexample.com/api/v1/employees', null).then(response => {
-            const employees = response.data.data
-            this.setState({employees: employees});
+            const firstTenEmployees = response.data.data.slice(0, 10);
+            this.setState({employees: firstTenEmployees});
         });
     }
 
