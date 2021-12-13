@@ -6,7 +6,7 @@ class Employee extends Component {
     render() {
         return (
             <div className={styles.Employee}>
-                User <b>{this.props.name}</b>
+                User <b>{this.props.name}({this.props.age})</b>
             </div>
         );
     }
