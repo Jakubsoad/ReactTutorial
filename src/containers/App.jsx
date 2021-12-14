@@ -26,6 +26,19 @@ class App extends React.Component {
         });
     }
 
+    saveEmployeeHandler = () => {
+        const employeeToSave = {
+            name: 'Joe',
+            salary: 3400,
+            age: 25,
+        }
+
+        axios.post(`https://dummy.restapiexample.com/api/v1/create`, employeeToSave).then(response => {
+            //JTD
+            console.log(response);
+        });
+    }
+
     render() {
 
         let selectedEmployee = null;
@@ -39,6 +52,7 @@ class App extends React.Component {
                 {selectedEmployee}
                 <h1>Employees</h1>
                 <Employees employees={this.state.employees} showSelectedEmployee={this.showSelectedEmployeeHandler}/>
+                <button onClick={this.saveEmployeeHandler} className="UpdateButton">Save Employee</button>
             </div>
         );
     }
